@@ -5,6 +5,19 @@ import CategoryDetailView from './CategoryDetailView'
 
 class Main extends React.Component {
 
+    /*Main can be sent props too
+    To use in the constructor; use the following:
+    constructor(props) {
+        super()
+        console.log(props)
+    }
+    or can do this:
+    constructor(props) {
+        super(props)
+        console.log(this.props)
+    }
+    Regardless of above options, it can be accessed in render as this.props
+    */
     constructor() {
         super()
         this.state = {
@@ -45,6 +58,13 @@ class Main extends React.Component {
         return (
             <div>
                 <h1>Acme Products and Categories - React!</h1>
+
+                {/* To display JSON in React before building components, can do following:
+                    <div>
+                        <pre>
+                            {JSON.stringify(categories, null, 2)}
+                        </pre>
+                    </div>*/}
 
                 {
                     category.id ? <CategoryDetailView category={category} />

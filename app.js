@@ -5,7 +5,15 @@ const app = new express();
 module.exports = app;
 
 app.use(express.static(path.join(__dirname, "src")));
+
+/* Can do following if not setting static route for src 
+app.get('/', (req, res, next) => {
+    res.sendFile(path.join(__dirname, "src/index.html"));
+})
+*/
+
 app.use("/dist", express.static(path.join(__dirname, "dist")));
+
 
 app.use('/api/categories', require('./api/categories'));
 
